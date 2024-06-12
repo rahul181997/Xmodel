@@ -1,4 +1,4 @@
-.modal {
+.app {
   position: fixed;
   top: 0;
   left: 0;
@@ -13,7 +13,7 @@
 .modal-open {
   background-color: rgba(0, 0, 0, 0.5);
 }
-.modal-content {
+.modal {
   display: flex;
   flex-direction: column;
   justify-content: center;
