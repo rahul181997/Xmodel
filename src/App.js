@@ -18,9 +18,14 @@ const XModal = () => {
       }
     };
 
-    document.addEventListener("mousedown", handleOutsideClick);
+    const handleMouseUp = () => {
+      document.addEventListener("mousedown", handleOutsideClick);
+    };
+
+    document.addEventListener("mouseup", handleMouseUp);
 
     return () => {
+      document.removeEventListener("mouseup", handleMouseUp);
       document.removeEventListener("mousedown", handleOutsideClick);
     };
   }, []);
