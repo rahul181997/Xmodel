@@ -13,19 +13,14 @@ const XModal = () => {
 
   useEffect(() => {
     const handleOutsideClick = (e) => {
-      if (!modalRef.current || !modalRef.current.contains(e.target)) {
+      if (modalRef.current && !modalRef.current.contains(e.target)) {
         closeModal();
       }
     };
 
-    const handleMouseUp = () => {
-      document.addEventListener("mousedown", handleOutsideClick);
-    };
-
-    document.addEventListener("mouseup", handleMouseUp);
+    document.addEventListener("mousedown", handleOutsideClick);
 
     return () => {
-      document.removeEventListener("mouseup", handleMouseUp);
       document.removeEventListener("mousedown", handleOutsideClick);
     };
   }, []);
@@ -77,7 +72,7 @@ const XModal = () => {
   };
 
   return (
-    <div className="modal">
+    <div>
       <h2>User Details Modal</h2>
       <button className="open-form-button" onClick={openModal}>
         Open Form
