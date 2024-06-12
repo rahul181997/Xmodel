@@ -73,11 +73,12 @@ const XModal = () => {
 
   return (
     <div className="app">
-      <div className="modal"> {/* New div with class name "modal" */}
+       {/* New div with class name "modal" */}
         <h2>User Details Modal</h2>
         <button className="open-form-button" onClick={openModal}>
           Open Form
         </button>
+        <div className="modal">
         {isOpen && (
           <div className="modal-content" ref={modalRef}>
             <h2>Fill Details</h2>
